@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawassa University</title>
+     <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <style>
+         body {
+                 margin: auto;
+                 padding: 0;
+                 background: linear-gradient(135deg, #0062be, #00a2ff);
+                 font-family: Arial, sans-serif;
+                 
+           }
+         .login-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0062be, #00a2ff);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 0;
+            overflow: auto;
+          }
+            .login-page h1 {
+                margin-bottom: 20px;
+                font-size: 2.5em;
+                color: white;    
+            }
+            .login-page form {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                background-color: rgb(67, 67, 94);
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-top: 20px; 
+                margin-bottom: 20px;
+                box-sizing: content-box;
+                
+            }
+            .login-page label {
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: white;
+                padding: auto;
+                margin-top: 10px;
+            }
+            .login-page input {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1em;
+                color: black;
+                background-color: white;
+                margin-top: 5px;
+            }
+            .login-page button {
+                padding: 10px;
+                background-color: rgb(43, 43, 155);
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-size: 1em;
+                cursor: pointer;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                margin-left: 50px;
+                margin-right: 50px;
+                width: 200px;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .login-page button:hover {
+                background-color: rgb(20, 20, 120);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                transform: translateY(-2px);
+            }
+            .login-page a {
+                color: white;
+                text-decoration: none;
+                margin-top: 10px;
+                font-size: 0.9em;
+            }
+            .login-page a:hover {
+                text-decoration: underline;
+            }
+            footer {
+                text-align: center;
+                padding: 20px;
+                /* background-color: rgb(43, 43, 155); */
+                color: white;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+            footer a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-size: 0.9em;
+                margin-top: 10px;
+                display: inline-block;
+                padding: 5px;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                background-color: linear-gradient(43, 43, 155);
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 8px 12px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+            footer p {
+                margin: 5px 0;
+                font-size: 0.9em;
+                color: white;
+                font-weight: bold;
+            }
+            @media screen and (max-width: 400px) {
+                .login-page h1 {
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+                .login-page form {
+                    width: 90%;
+                    padding: 15px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                    background-color: rgb(43, 43, 155);
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 5px;
+                    font-size: 0.9em;
+                    color: white;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: auto;
+                    text-align: center;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    padding: 20px; 
+                }
+                .login-page button {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-right: 0;
+                    font-size: 0.9em;
+                    padding: 8px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+                .login-page input {
+                    font-size: 0.9em;
+                    padding: 8px;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                }
+                footer {
+                    font-size: 0.8em;
+                    padding: 15px;
+                }
+                footer a {
+                    font-size: 0.8em;
+                    margin: 0 5px;
+                    padding: 4px 8px;
+                }
+                footer p {
+                    font-size: 0.8em;
+                }
+
+
+            }   
+ </style>
+    <!-- login page -->
+    <section class="login-page">
+        <h1>Welcome to Hawassa University</h1>
+        <form action="/login" method="post">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div>
+                <a href="/forgot-password">Forgot Password?</a>
+                <a href="/register">Register</a>
+            </div>
+        </form>
+ </section>
+            <!-- fotter section with important links -->
+    <footer>
+        <p>&copy; 2024 Hawassa University. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a> |
+            <a href="#">Help</a>
+        </p>        
+    </footer>
+    <!-- js for linking the next page if the username and password is correect -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (replace with actual authentication logic)
+            if (username === 'admin' && password === '1234admin#10') {
+                window.location.href = 'laptop.html'; // Redirect to add_LT page
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+</html>

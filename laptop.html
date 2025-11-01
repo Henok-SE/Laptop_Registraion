@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawassa University Laptop Registration System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0062be, #00a2ff);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #004b8d;
+            padding: 15px;
+        }
+        
+        .menu button {
+            background: #fff;
+            color: #004b8d;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            margin: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu button:hover {
+            background: #ffcc00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        /* .menu button:active {
+            background: #ffc107;
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        } */
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .form-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #004b8d;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #004b8d;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            border-color: #004b8d;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 75, 141, 0.2);
+        }
+        
+        button {
+            background: #004b8d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #003366;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .secondary-btn {
+            background: #6c757d;
+        }
+        
+        .secondary-btn:hover {
+            background: #5a6268;
+        }
+        
+        .warning-btn {
+            background: #dc3545;
+        }
+        
+        .warning-btn:hover {
+            background: #c82333;
+        }
+        
+        .success-btn {
+            background: #28a745;
+        }
+        
+        .success-btn:hover {
+            background: #218838;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #004b8d;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        
+        .search-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .search-container input {
+            flex: 1;
+        }
+        
+        .message {
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #003366;
+            color: white;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu {
+                flex-direction: column;
+            }
+            
+            .menu button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hawassa University</h1>
+            <p class="subtitle">Laptop Registration System</p>
+        </header>
+        
+        <div class="menu">
+            <button onclick="showSection('add')">Add Laptop</button>
+            <button onclick="showSection('display')">View All Laptops</button>
+            <button onclick="showSection('update')">Update/Delete</button>
+            <button onclick="showSection('search')">Search</button>
+        </div>
+        
+        <div class="content">
+            <!-- Add Laptop Section -->
+            <div id="add" class="section">
+                <div class="form-container">
+                    <h2>Register New Laptop</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Student Name</label>
+                            <input type="text" id="name" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="laptopType">Laptop Type</label>
+                            <input type="text" id="laptopType" placeholder="e.g., Dell XPS, MacBook Pro">
+                        </div>
+                        <div class="form-group">
+                            <label for="serialNo">Serial Number</label>
+                            <input type="text" id="serialNo" placeholder="Enter serial number">
+                        </div>
+                        <div class="form-group">
+                            <label for="registerId">Registration ID</label>
+                            <input type="text" id="registerId" placeholder="University registration ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="registeredDate">Registered Date</label>
+                            <input type="date" id="registeredDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="text" id="studentId" placeholder="University student ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" id="department" placeholder="e.g., Computer Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNo">Phone Number</label>
+                            <input type="text" id="phoneNo" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="laptopIdentification">Laptop Identification</label>
+                            <select id="laptopIdentification">
+                                <option value="P">Personal (P)</option>
+                                <option value="G">Governmental (G)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="success-btn" onclick="addLaptop()">Register Laptop</button>
+                        <button class="secondary-btn" onclick="clearForm()">Clear Form</button>
+                    </div>
+                </div>
+                <div id="addMessage" class="message"></div>
+            </div>
+            
+            <!-- Display Laptops Section -->
+            <div id="display" class="section" style="display:none">
+                <h2>Registered Laptops</h2>
+                <table id="laptopsTable">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Laptop Type</th>
+                            <th>Serial No</th>
+                            <th>Student ID</th>
+                            <th>Department</th>
+                            <th>Registration Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Update/Delete Section -->
+            <div id="update" class="section" style="display:none">
+                <div class="form-container">
+                    <h2>Update or Delete Laptop Registration</h2>
+                    <div class="form-group">
+                        <label for="searchSerial">Enter Serial Number to Find</label>
+                        <input type="text" id="searchSerial" placeholder="Enter laptop serial number">
+                    </div>
+                    <button onclick="findLaptop()">Find Laptop</button>
+                    
+                    <div id="updateForm" style="display:none">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="updateName">Student Name</label>
+                                <input type="text" id="updateName">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateLaptopType">Laptop Type</label>
+                                <input type="text" id="updateLaptopType">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateSerialNo">Serial Number</label>
+                                <input type="text" id="updateSerialNo">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateRegisterId">Registration ID</label>
+                                <input type="text" id="updateRegisterId">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateRegisteredDate">Registered Date</label>
+                                <input type="date" id="updateRegisteredDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateStudentId">Student ID</label>
+                                <input type="text" id="updateStudentId">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateDepartment">Department</label>
+                                <input type="text" id="updateDepartment">
+                            </div>
+                            <div class="form-group">
+                                <label for="updatePhoneNo">Phone Number</label>
+                                <input type="text" id="updatePhoneNo">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateLaptopIdentification">Laptop Identification</label>
+                                <select id="updateLaptopIdentification">
+                                    <option value="P">Personal (P)</option>
+                                    <option value="G">Governmental (G)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="success-btn" onclick="updateLaptop()">Update Registration</button>
+                            <button class="warning-btn" onclick="deleteLaptop()">Delete Registration</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="updateMessage" class="message"></div>
+            </div>
+            
+            <!-- Search Section -->
+            <div id="search" class="section" style="display:none">
+                <h2>Search Laptop Registrations</h2>
+                <div class="form-container">
+                    <div class="search-container">
+                        <input type="text" id="searchQuery" placeholder="Search by serial number, student name, or ID">
+                        <button onclick="searchLaptops()">Search</button>
+                    </div>
+                </div>
+                <table id="searchResults">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Laptop Type</th>
+                            <th>Serial No</th>
+                            <th>Student ID</th>
+                            <th>Department</th>
+                            <th>Registration Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Search results will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="searchMessage" class="message"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 Hawassa University - Laptop Registration System</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data storage
+        let laptops = JSON.parse(localStorage.getItem('laptops')) || [];
+        let currentLaptopId = null;
+        
+        // Show selected section
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            
+            if (sectionId === 'display') {
+                displayLaptops();
+            }
+        }
+        
+        // Add a new laptop
+        function addLaptop() {
+            const name = document.getElementById('name').value;
+            const laptopType = document.getElementById('laptopType').value;
+            const serialNo = document.getElementById('serialNo').value;
+            const registerId = document.getElementById('registerId').value;
+            const registeredDate = document.getElementById('registeredDate').value;
+            const studentId = document.getElementById('studentId').value;
+            const department = document.getElementById('department').value;
+            const phoneNo = document.getElementById('phoneNo').value;
+            const laptopIdentification = document.getElementById('laptopIdentification').value;
+            
+            // Validate required fields
+            if (!name || !serialNo || !studentId) {
+                showMessage('addMessage', 'Please fill in all required fields', 'error');
+                return;
+            }
+            
+            // Check if serial number already exists
+            if (laptops.some(laptop => laptop.serialNo === serialNo)) {
+                showMessage('addMessage', 'A laptop with this serial number is already registered!', 'warning');
+                return;
+            }
+            
+            // Add new laptop
+            const newLaptop = {
+                id: Date.now(), // unique ID
+                name,
+                laptopType,
+                serialNo,
+                registerId,
+                registeredDate,
+                studentId,
+                department,
+                phoneNo,
+                laptopIdentification
+            };
+            
+            laptops.push(newLaptop);
+            localStorage.setItem('laptops', JSON.stringify(laptops));
+            
+            showMessage('addMessage', 'Laptop registered successfully!', 'success');
+            clearForm();
+        }
+        
+        // Clear the form
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('laptopType').value = '';
+            document.getElementById('serialNo').value = '';
+            document.getElementById('registerId').value = '';
+            document.getElementById('registeredDate').value = '';
+            document.getElementById('studentId').value = '';
+            document.getElementById('department').value = '';
+            document.getElementById('phoneNo').value = '';
+            document.getElementById('laptopIdentification').value = 'P';
+        }
+        
+        // Display all laptops
+        function displayLaptops() {
+            const tableBody = document.querySelector('#laptopsTable tbody');
+            tableBody.innerHTML = '';
+            
+            if (laptops.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center;">No laptops registered yet</td></tr>';
+                return;
+            }
+            
+            laptops.forEach(laptop => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${laptop.name}</td>
+                    <td>${laptop.laptopType}</td>
+                    <td>${laptop.serialNo}</td>
+                    <td>${laptop.studentId}</td>
+                    <td>${laptop.department}</td>
+                    <td>${laptop.registeredDate}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Find laptop for update/delete
+        function findLaptop() {
+            const serialNo = document.getElementById('searchSerial').value;
+            const laptop = laptops.find(l => l.serialNo === serialNo);
+            
+            if (!laptop) {
+                showMessage('updateMessage', 'No laptop found with this serial number', 'error');
+                return;
+            }
+            
+            // Show the update form
+            document.getElementById('updateForm').style.display = 'block';
+            
+            // Populate the form
+            document.getElementById('updateName').value = laptop.name;
+            document.getElementById('updateLaptopType').value = laptop.laptopType;
+            document.getElementById('updateSerialNo').value = laptop.serialNo;
+            document.getElementById('updateRegisterId').value = laptop.registerId;
+            document.getElementById('updateRegisteredDate').value = laptop.registeredDate;
+            document.getElementById('updateStudentId').value = laptop.studentId;
+            document.getElementById('updateDepartment').value = laptop.department;
+            document.getElementById('updatePhoneNo').value = laptop.phoneNo;
+            document.getElementById('updateLaptopIdentification').value = laptop.laptopIdentification;
+            
+            currentLaptopId = laptop.id;
+            showMessage('updateMessage', 'Laptop found. You can now update or delete the registration.', 'success');
+        }
+        
+        // Update laptop registration
+        function updateLaptop() {
+            if (!currentLaptopId) return;
+            
+            const index = laptops.findIndex(l => l.id === currentLaptopId);
+            if (index === -1) return;
+            
+            // Update the laptop data
+            laptops[index] = {
+                id: currentLaptopId,
+                name: document.getElementById('updateName').value,
+                laptopType: document.getElementById('updateLaptopType').value,
+                serialNo: document.getElementById('updateSerialNo').value,
+                registerId: document.getElementById('updateRegisterId').value,
+                registeredDate: document.getElementById('updateRegisteredDate').value,
+                studentId: document.getElementById('updateStudentId').value,
+                department: document.getElementById('updateDepartment').value,
+                phoneNo: document.getElementById('updatePhoneNo').value,
+                laptopIdentification: document.getElementById('updateLaptopIdentification').value
+            };
+            
+            localStorage.setItem('laptops', JSON.stringify(laptops));
+            showMessage('updateMessage', 'Laptop registration updated successfully!', 'success');
+            
+            // Reset the form
+            document.getElementById('searchSerial').value = '';
+            document.getElementById('updateForm').style.display = 'none';
+            currentLaptopId = null;
+        }
+        
+        // Delete laptop registration
+        function deleteLaptop() {
+            if (!currentLaptopId) return;
+            
+            if (!confirm('Are you sure you want to delete this registration?')) return;
+            
+            laptops = laptops.filter(l => l.id !== currentLaptopId);
+            localStorage.setItem('laptops', JSON.stringify(laptops));
+            showMessage('updateMessage', 'Laptop registration deleted successfully!', 'success');
+            
+            // Reset the form
+            document.getElementById('searchSerial').value = '';
+            document.getElementById('updateForm').style.display = 'none';
+            currentLaptopId = null;
+        }
+        
+        // Search laptops
+        function searchLaptops() {
+            const query = document.getElementById('searchQuery').value.toLowerCase();
+            const results = laptops.filter(laptop => 
+                laptop.serialNo.toLowerCase().includes(query) ||
+                laptop.name.toLowerCase().includes(query) ||
+                laptop.studentId.toLowerCase().includes(query)
+            );
+            
+            const tableBody = document.querySelector('#searchResults tbody');
+            tableBody.innerHTML = '';
+            
+            if (results.length === 0) {
+                showMessage('searchMessage', 'No matching laptops found', 'warning');
+                return;
+            }
+            
+            results.forEach(laptop => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${laptop.name}</td>
+                    <td>${laptop.laptopType}</td>
+                    <td>${laptop.serialNo}</td>
+                    <td>${laptop.studentId}</td>
+                    <td>${laptop.department}</td>
+                    <td>${laptop.registeredDate}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            showMessage('searchMessage', `Found ${results.length} matching laptop(s)`, 'success');
+        }
+        
+        // Show message
+        function showMessage(elementId, message, type) {
+            const messageElement = document.getElementById(elementId);
+            messageElement.textContent = message;
+            messageElement.className = `message ${type}`;
+            
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                messageElement.textContent = '';
+                messageElement.className = 'message';
+            }, 5000);
+        }
+        
+        // Initialize the page
+        window.onload = function() {
+            displayLaptops();
+        };
+    </script>
+</body>
+</html>
