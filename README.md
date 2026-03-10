@@ -2,17 +2,19 @@
 
 A web-based laptop registration system built to replace manual paperwork at college campuses.
 
-## 📋 Overview
-This system digitizes the laptop registration process, helping campus staff manage registrations efficiently. It solves the real problem of lost paper files, manual entries, and duplicate registrations that plagued campus administration.
-
-Originally built as a C++ console application with file handling, it was rebuilt as a web application for a warmer, more intuitive user experience that staff would actually enjoy using.
-
 ## 🔗 Live Demo
 [https://laptop-registraion.vercel.app/](https://laptop-registraion.vercel.app/)
 
 **Demo Credentials:**  
 Username: `admin`  
 Password: `1234admin#10`
+
+## 📋 Overview
+This system digitizes the laptop registration process, helping campus staff manage registrations efficiently. It solves the real problem of lost paper files, manual entries, and duplicate registrations that plagued campus administration.
+
+Originally built as a C++ console application with file handling, it was rebuilt as a web application for a warmer, more intuitive user experience that staff would actually enjoy using.
+
+**🚧 Ongoing Project:** I'm currently working with campus stakeholders to implement this system in our university. The goal is to replace the existing manual process with this digital solution.
 
 ## ✨ Features
 - ✅ **Digital Registration** - Replace stacks of paper forms with clean digital entries
@@ -34,10 +36,11 @@ Password: `1234admin#10`
 4. View and manage all registrations from the dashboard
 
 ## 📁 Project Evolution
-| Version | Technology | Interface |
-|---------|------------|-----------|
-| v1.0 | C++ with file handling | Console-based (cold, uninviting) |
-| v2.0 | HTML, CSS, JavaScript | Web-based (warm, friendly) |
+| Version | Technology | Interface | Status |
+|---------|------------|-----------|--------|
+| v1.0 | C++ with file handling | Console-based | Prototype |
+| v2.0 | HTML, CSS, JavaScript | Web-based | Live Demo |
+| v2.1 | Stakeholder feedback integration | Web-based | In Progress |
 
 ## 💡 Problem It Solves
 - **Before:** Paper files got lost, manual entries had errors, no duplicate checking
@@ -47,6 +50,14 @@ Password: `1234admin#10`
 - College admin staff
 - Campus security personnel
 - Students registering their laptops
+
+## 🤝 Stakeholder Engagement
+I'm actively communicating with:
+- Campus administration
+- Security office
+- IT department
+
+The goal is to gather feedback and tailor the system to their actual needs before full deployment.
 
 ## 📬 Feedback
 Found a bug or have a suggestion? Feel free to reach out!
