@@ -2,6 +2,7 @@
 
 A web-based laptop registration system built to replace manual paperwork at college campuses.
 
+
 ## 📋 Overview
 This system digitizes the laptop registration process, helping campus staff manage registrations efficiently. It solves the real problem of lost paper files, manual entries, and duplicate registrations that plagued campus administration.
 
