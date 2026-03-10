@@ -2,12 +2,7 @@
 
 A web-based laptop registration system built to replace manual paperwork at college campuses.
 
-## 🔗 Live Demo
-[https://laptop-registraion.vercel.app/](https://laptop-registraion.vercel.app/)
 
-**Demo Credentials:**  
-Username: `admin`  
-Password: `1234admin#10`
 
 ## 📋 Overview
 This system digitizes the laptop registration process, helping campus staff manage registrations efficiently. It solves the real problem of lost paper files, manual entries, and duplicate registrations that plagued campus administration.
