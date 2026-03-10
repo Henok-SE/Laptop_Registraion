@@ -1,8 +1,7 @@
 # Laptop Registration System 💻
 
 A web-based laptop registration system built to replace manual paperwork at college campuses.
-
-
+-----
 
 ## 📋 Overview
 This system digitizes the laptop registration process, helping campus staff manage registrations efficiently. It solves the real problem of lost paper files, manual entries, and duplicate registrations that plagued campus administration.
@@ -10,6 +9,13 @@ This system digitizes the laptop registration process, helping campus staff mana
 Originally built as a C++ console application with file handling, it was rebuilt as a web application for a warmer, more intuitive user experience that staff would actually enjoy using.
 
 **🚧 Ongoing Project:** I'm currently working with campus stakeholders to implement this system in our university. The goal is to replace the existing manual process with this digital solution.
+
+## 🔗 Live Demo
+[https://laptop-registraion.vercel.app/](https://laptop-registraion.vercel.app/)
+
+**Demo Credentials:**  
+Username: `admin`  
+Password: `1234admin#10`
 
 ## ✨ Features
 - ✅ **Digital Registration** - Replace stacks of paper forms with clean digital entries
